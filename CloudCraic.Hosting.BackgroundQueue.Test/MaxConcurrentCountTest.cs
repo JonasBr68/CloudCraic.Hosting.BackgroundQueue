@@ -4,7 +4,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace DalSoft.Hosting.BackgroundQueue.Test
+namespace CloudCraic.Hosting.BackgroundQueue.Test
 {
     public class MaxConcurrentCountTest
     {

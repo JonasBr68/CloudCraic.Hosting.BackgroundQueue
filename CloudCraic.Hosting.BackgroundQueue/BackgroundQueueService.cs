@@ -2,7 +2,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace DalSoft.Hosting.BackgroundQueue
+namespace CloudCraic.Hosting.BackgroundQueue
 {
     public class BackgroundQueueService : HostedService
     {

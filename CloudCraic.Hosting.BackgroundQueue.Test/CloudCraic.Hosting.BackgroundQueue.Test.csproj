@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DalSoft.Hosting.BackgroundQueue\DalSoft.Hosting.BackgroundQueue.csproj" />
+    <ProjectReference Include="..\CloudCraic.Hosting.BackgroundQueue\CloudCraic.Hosting.BackgroundQueue.csproj" />
   </ItemGroup>
 
 </Project>

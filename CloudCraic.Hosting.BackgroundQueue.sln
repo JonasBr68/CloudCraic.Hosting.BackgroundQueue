@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DalSoft.Hosting.BackgroundQueue", "DalSoft.Hosting.BackgroundQueue\DalSoft.Hosting.BackgroundQueue.csproj", "{CC5BCB5D-506A-4AC2-BD71-9FF329B17230}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CloudCraic.Hosting.BackgroundQueue", "CloudCraic.Hosting.BackgroundQueue\CloudCraic.Hosting.BackgroundQueue.csproj", "{CC5BCB5D-506A-4AC2-BD71-9FF329B17230}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DalSoft.Hosting.BackgroundQueue.Test", "DalSoft.Hosting.BackgroundQueue.Test\DalSoft.Hosting.BackgroundQueue.Test.csproj", "{11685F21-3AC3-4605-83DB-F53C57F27F24}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CloudCraic.Hosting.BackgroundQueue.Test", "CloudCraic.Hosting.BackgroundQueue.Test\CloudCraic.Hosting.BackgroundQueue.Test.csproj", "{11685F21-3AC3-4605-83DB-F53C57F27F24}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

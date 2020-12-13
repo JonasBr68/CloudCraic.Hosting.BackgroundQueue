@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using Microsoft.Extensions.Hosting;
 
-namespace DalSoft.Hosting.BackgroundQueue
+namespace CloudCraic.Hosting.BackgroundQueue
 {
     // Example untested base class code kindly provided by David Fowl: https://gist.github.com/davidfowl/a7dd5064d9dcf35b6eae1a7953d615e3
     public abstract class HostedService : IHostedService

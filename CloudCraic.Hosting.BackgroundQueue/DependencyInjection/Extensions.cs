@@ -2,7 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace DalSoft.Hosting.BackgroundQueue.DependencyInjection
+namespace CloudCraic.Hosting.BackgroundQueue.DependencyInjection
 {
     public static class Extensions
     {

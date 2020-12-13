@@ -1,10 +1,14 @@
-> **Update December 2019** ASP.NET Core 3.1 supports background tasks using [Microsoft.NET.Sdk.Worker](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/host/hosted-services?view=aspnetcore-3.1&tabs=visual-studio) it's excellent and works really well.
+> **Update December 2019** With ASP.NET Core 3.1 now supporting background tasks using [Microsoft.NET.Sdk.Worker](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/host/hosted-services?view=aspnetcore-3.1&tabs=visual-studio) this might not be what you need as it's excellent and works really well.
 
-# DalSoft.Hosting.BackgroundQueue
+# CloudCraic.Hosting.BackgroundQueue
 
-> This is used in production environments, however the test coverage isn't where it needs to be, should you run into a problem please raise an issue
+## [Originally based on DalSoft.Hosting.BackgroundQueue](https://github.com/DalSoft/DalSoft.Hosting.BackgroundQueue)
 
-DalSoft.Hosting.BackgroundQueue is a very lightweight .NET Core replacement for [HostingEnvironment.QueueBackgroundWorkItem](https://www.hanselman.com/blog/HowToRunBackgroundTasksInASPNET.aspx) it has no extra dependancies!
+However as original project has been archived, and is stale, this is a new fork with some improvements.
+
+> If this is used in production environments, be aware the test coverage isn't where it needs to be, should you run into a problem please raise an issue
+
+CloudCraic.Hosting.BackgroundQueue is a very lightweight .NET Core replacement for [HostingEnvironment.QueueBackgroundWorkItem](https://www.hanselman.com/blog/HowToRunBackgroundTasksInASPNET.aspx) it has no extra dependancies!
 
 For those of you that haven't used HostingEnvironment.QueueBackgroundWorkItem it was a simple way in .NET 4.5.2 to safely run a background task on a webhost, for example sending an email when a user registers. 
 
@@ -12,13 +16,13 @@ Yes there are loads of  good options (hangfire, Azure Web Jobs/Functions) for do
 
 ## Supported Platforms
 
-DalSoft.Hosting.BackgroundQueue uses [IHostedService](https://blogs.msdn.microsoft.com/cesardelatorre/2017/11/18/implementing-background-tasks-in-microservices-with-ihostedservice-and-the-backgroundservice-class-net-core-2-x/) and works with any .NET Core 2.0 IWebHost i.e. a server that supports ASP.NET Core.
+CloudCraic.Hosting.BackgroundQueue uses [IHostedService](https://blogs.msdn.microsoft.com/cesardelatorre/2017/11/18/implementing-background-tasks-in-microservices-with-ihostedservice-and-the-backgroundservice-class-net-core-2-x/) and works with any .NET Core 2.0 IWebHost i.e. a server that supports ASP.NET Core.
 
-DalSoft.Hosting.BackgroundQueue also works with .NET Core's 2.1 lighter-weight [IHost](https://blogs.msdn.microsoft.com/cesardelatorre/2017/11/18/implementing-background-tasks-in-microservices-with-ihostedservice-and-the-backgroundservice-class-net-core-2-x/) - i.e. just services no ASP.NET Core, ideal for microservices.
+CloudCraic.Hosting.BackgroundQueue also works with .NET Core's 2.1 lighter-weight [IHost](https://blogs.msdn.microsoft.com/cesardelatorre/2017/11/18/implementing-background-tasks-in-microservices-with-ihostedservice-and-the-backgroundservice-class-net-core-2-x/) - i.e. just services no ASP.NET Core, ideal for microservices.
 
 ## Getting Started
 ```dos
-PM> Install-Package DalSoft.Hosting.BackgroundQueue
+PM> Install-Package CloudCraic.Hosting.BackgroundQueue
 ```
 In your ASP.NET Core Startup.cs:
 ```cs
@@ -31,7 +35,7 @@ public void ConfigureServices(IServiceCollection services)
       });
 }
 ```
-> This setups DalSoft.Hosting.BackgroundQueue using .NET Core's DI container. If your using a different DI container you need to register BackgroundQueue and BackgroundQueueService as singletons.
+> This setups CloudCraic.Hosting.BackgroundQueue using .NET Core's DI container. If your using a different DI container you need to register BackgroundQueue and BackgroundQueueService as singletons.
  
 **maxConcurrentCount (optional)**
 maxConcurrentCount is the number of Tasks allowed to run in the background concurrently. maxConcurrentCount defaults to 1.
@@ -67,11 +71,11 @@ public IActionResult SendEmail([FromBody]emailRequest)
 ```
 
 ## Thread Safety 
-DalSoft.Hosting.BackgroundQueue uses a [ConcurrentQueue](https://msdn.microsoft.com/en-us/library/dd267265(v=vs.110).aspx) and [interlocked operations](https://docs.microsoft.com/en-us/dotnet/standard/threading/interlocked-operations) so is completely thread safe, just watch out for [Access to Modified Closure](https://weblogs.asp.net/fbouma/linq-beware-of-the-access-to-modified-closure-demon) issues.
+CloudCraic.Hosting.BackgroundQueue uses a [ConcurrentQueue](https://msdn.microsoft.com/en-us/library/dd267265(v=vs.110).aspx) and [interlocked operations](https://docs.microsoft.com/en-us/dotnet/standard/threading/interlocked-operations) so is completely thread safe, just watch out for [Access to Modified Closure](https://weblogs.asp.net/fbouma/linq-beware-of-the-access-to-modified-closure-demon) issues.
 
 ## Standing on the Shoulders of Giants
 
-DalSoft.Hosting.BackgroundQueue is inspired by and gives credit to:
+CloudCraic.Hosting.BackgroundQueue is inspired by and gives credit to:
 
 * [Steve Gordon's ASP.NET Core 2.0 IHostedService](https://www.stevejgordon.co.uk/asp-net-core-2-ihostedservice)
 * [David Fowl's HostedService base class](https://gist.github.com/davidfowl/a7dd5064d9dcf35b6eae1a7953d615e3)

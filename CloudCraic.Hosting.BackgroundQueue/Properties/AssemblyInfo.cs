@@ -17,4 +17,4 @@ using System.Runtime.InteropServices;
 
 [assembly: Guid("8a2f23f9-a550-4fa8-8e09-17d3b9d574ad")]
 
-[assembly: InternalsVisibleTo("DalSoft.Hosting.BackgroundQueue.Test")]
+[assembly: InternalsVisibleTo("CloudCraic.Hosting.BackgroundQueue.Test")]
