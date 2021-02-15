@@ -15,5 +15,7 @@ namespace CloudCraic.Hosting.BackgroundQueue
         int MillisecondsToWaitBeforePickingUpTask { get; }
 
         Task Dequeue(CancellationToken cancellationToken);
+
+        void Enqueue(Func<CancellationToken, Task> task);
     }
 }
