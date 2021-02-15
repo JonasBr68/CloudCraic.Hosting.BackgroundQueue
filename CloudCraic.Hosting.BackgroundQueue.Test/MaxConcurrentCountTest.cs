@@ -27,7 +27,7 @@ namespace CloudCraic.Hosting.BackgroundQueue.Test
 
             var runningService = Task.Run(async () => await queueService.StartAsync(tokenSource.Token));
 
-            while(queue.TaskQueue.Count > 0)
+            while(queue.Count > 0)
             {
                 await Task.Delay(20);
             }

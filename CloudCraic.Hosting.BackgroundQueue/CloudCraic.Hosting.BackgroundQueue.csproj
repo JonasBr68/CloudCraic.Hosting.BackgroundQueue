@@ -1,14 +1,16 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>CloudCraic.Hosting.BackgroundQueue</AssemblyName>
     <IsPackable>true</IsPackable>
     <PackageId>CloudCraic.Hosting.BackgroundQueue</PackageId>
-    <PackageVersion>1.0.4</PackageVersion>
-    <PackageReleaseNotes>Removed superfluous Task.Run and now pass the cancellation token to the background task.</PackageReleaseNotes>
+    <PackageVersion>1.0.5</PackageVersion>
+    <PackageReleaseNotes>Added interface abstraction to make it easier to mock when unit testing in project using the package</PackageReleaseNotes>
     <Authors>CloudCraic</Authors>
-    <Description>CloudCraic.Hosting.BackgroundQueue is a very lightweight .NET Core replacement for HostingEnvironment.QueueBackgroundWorkItem using IHostedService</Description>
+    <Description>CloudCraic.Hosting.BackgroundQueue is a very lightweight .NET Core replacement for HostingEnvironment.QueueBackgroundWorkItem using IHostedService
+Based on the stale DalSoft.Hosting.BackgroundQueue project
+with small improvements and fixes</Description>
     <PackageTags>asp.net core webbackgrounder environment.queuebackgroundworkitem IHostedService IHost IWebHost</PackageTags>
     <Copyright></Copyright>
     <RepositoryUrl>https://github.com/JonasBr68/CloudCraic.Hosting.BackgroundQueue</RepositoryUrl>
@@ -16,6 +18,9 @@
     <PackageProjectUrl>https://github.com/JonasBr68/CloudCraic.Hosting.BackgroundQueue</PackageProjectUrl>
     <PackageIconUrl>http://dalsoft.co.uk/images/icon.png</PackageIconUrl>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <AssemblyVersion>1.0.5.0</AssemblyVersion>
+    <FileVersion>1.0.5.0</FileVersion>
+    <Version>1.0.5</Version>
   </PropertyGroup>
 
   <ItemGroup>

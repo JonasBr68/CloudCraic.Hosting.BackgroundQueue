@@ -6,9 +6,9 @@ namespace CloudCraic.Hosting.BackgroundQueue
 {
     public class BackgroundQueueService : HostedService
     {
-        private readonly BackgroundQueue _backgroundQueue;
+        private readonly IBackgroundQueue _backgroundQueue;
 
-        public BackgroundQueueService(BackgroundQueue backgroundQueue)
+        public BackgroundQueueService(IBackgroundQueue backgroundQueue)
         {
             _backgroundQueue = backgroundQueue;
         }
@@ -17,14 +17,14 @@ namespace CloudCraic.Hosting.BackgroundQueue
         {
             while (!cancellationToken.IsCancellationRequested)
             {
-                if (_backgroundQueue.TaskQueue.Count == 0 || _backgroundQueue.ConcurrentCount > _backgroundQueue.MaxConcurrentCount)
+                if (_backgroundQueue.Count == 0 || _backgroundQueue.ConcurrentCount > _backgroundQueue.MaxConcurrentCount)
                 {
                     await Task.Delay(_backgroundQueue.MillisecondsToWaitBeforePickingUpTask, cancellationToken);
                 }
                 else
                 {
                     List<Task> concurrentTasks = new List<Task>();
-                    while (_backgroundQueue.TaskQueue.Count > 0 && _backgroundQueue.ConcurrentCount <= _backgroundQueue.MaxConcurrentCount)
+                    while (_backgroundQueue.Count > 0 && _backgroundQueue.ConcurrentCount <= _backgroundQueue.MaxConcurrentCount)
                     {
                         concurrentTasks.Add(_backgroundQueue.Dequeue(cancellationToken));
                     }
