@@ -5,7 +5,7 @@
     <AssemblyName>CloudCraic.Hosting.BackgroundQueue</AssemblyName>
     <IsPackable>true</IsPackable>
     <PackageId>CloudCraic.Hosting.BackgroundQueue</PackageId>
-    <PackageVersion>1.0.5</PackageVersion>
+    <PackageVersion>1.0.7</PackageVersion>
     <PackageReleaseNotes>Added interface abstraction to make it easier to mock when unit testing in project using the package</PackageReleaseNotes>
     <Authors>CloudCraic</Authors>
     <Description>CloudCraic.Hosting.BackgroundQueue is a very lightweight .NET Core replacement for HostingEnvironment.QueueBackgroundWorkItem using IHostedService
@@ -18,9 +18,9 @@ with small improvements and fixes</Description>
     <PackageProjectUrl>https://github.com/JonasBr68/CloudCraic.Hosting.BackgroundQueue</PackageProjectUrl>
     <PackageIconUrl>http://dalsoft.co.uk/images/icon.png</PackageIconUrl>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <AssemblyVersion>1.0.5.0</AssemblyVersion>
-    <FileVersion>1.0.5.0</FileVersion>
-    <Version>1.0.5</Version>
+    <AssemblyVersion>1.0.7.0</AssemblyVersion>
+    <FileVersion>1.0.7.0</FileVersion>
+    <Version>1.0.7</Version>
   </PropertyGroup>
 
   <ItemGroup>

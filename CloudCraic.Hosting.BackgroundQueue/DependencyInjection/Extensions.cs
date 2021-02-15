@@ -8,7 +8,7 @@ namespace CloudCraic.Hosting.BackgroundQueue.DependencyInjection
     {
         public static void AddBackgroundQueue(this IServiceCollection services, Action<Exception> onException, int maxConcurrentCount=1, int millisecondsToWaitBeforePickingUpTask = 1000)
         {
-            services.AddSingleton(new BackgroundQueue(onException, maxConcurrentCount, millisecondsToWaitBeforePickingUpTask));
+            services.AddSingleton<IBackgroundQueue>(new BackgroundQueue(onException, maxConcurrentCount, millisecondsToWaitBeforePickingUpTask));
             services.AddSingleton<IHostedService, BackgroundQueueService>();
         }
     }
